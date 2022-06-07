@@ -74,8 +74,6 @@ const Produtos = () => {
       (item) => item.product_id === id
     ).length;
 
-    console.log(hasOutputs, hasEntries);
-
     if (hasEntries || hasOutputs) {
       alert("Esse produto possuí movimentações!");
       return;

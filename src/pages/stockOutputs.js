@@ -36,7 +36,7 @@ const StockOutputs = () => {
     setListProducts(db_products);
   }, []);
 
-  const handleNewEntry = () => {
+  const handleNewOutput = () => {
     if (!amount | (product_id === "0")) {
       return alert("Selecione o produto e a quantidade!");
     }
@@ -63,7 +63,7 @@ const StockOutputs = () => {
     setProduct_id("0");
   };
 
-  const removeEntries = (id) => {
+  const removeOutput = (id) => {
     const newArray = listStockOutputs.filter((item) => item.id !== id);
 
     localStorage.setItem("db_stock_outputs", JSON.stringify(newArray));
@@ -103,7 +103,7 @@ const StockOutputs = () => {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
             />
-            <Button w="40" onClick={handleNewEntry}>
+            <Button w="40" onClick={handleNewOutput}>
               SALVAR
             </Button>
           </SimpleGrid>
@@ -133,7 +133,7 @@ const StockOutputs = () => {
                         fontSize={11}
                         color="red.500"
                         fontWeight="bold"
-                        onClick={() => removeEntries(item.id)}
+                        onClick={() => removeOutput(item.id)}
                       >
                         DELETAR
                       </Button>
